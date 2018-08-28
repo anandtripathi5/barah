@@ -47,11 +47,9 @@ LOGGING_CONFIG = dict(
             'class': 'logging.handlers.SMTPHandler',
             'formatter': 'err_report',
             'mailhost': ("localhost", 25),
-            'fromaddr': 'no-reply@onehop.co',
+            'fromaddr': 'a@a.com',
             'toaddrs': [
-                'pranav@screen-magic.com', 'anand.tripathi@screen-magic.com',
-                'harsh.kohli@screen-magic.com', 'ishwar@screen-magic.com'
-                'ameya@screen-magic.com'
+                'a@a.com'
             ],
             'subject': 'OneAPI : Something bad happened'
         }
@@ -62,13 +60,8 @@ LOGGING_CONFIG = dict(
             'level': 'DEBUG',
             'propagate': False
         },
-        'sm_lib': {
-            'handlers': ['sm_lib'],
-            'level': 'DEBUG',
-            'propagate': False
-        },
         'crash': {
-            'handlers': ['critical_err', DEFAULT_LOGGER_NAME, 'sm_lib'],
+            'handlers': ['critical_err', DEFAULT_LOGGER_NAME],
             'level': 'ERROR',
             'propagate': False
         },
