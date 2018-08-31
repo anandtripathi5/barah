@@ -28,20 +28,6 @@ LOGGING_CONFIG = dict(
             'formatter': 'compact',
             'filters': ['request_id'],
             'level': 'DEBUG',
-            # 'filename': os.environ.get("DEFAULT_LOGGER_FILE_NAME"),
-            # 'interval': 1,
-            # 'when': 'midnight',
-            # 'encoding': 'utf8'
-        },
-        'sm_lib': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'compact',
-            'filters': ['request_id'],
-            'level': 'DEBUG',
-            # 'filename': os.environ.get("SM_LIB_LOGGER_FILE_NAME"),
-            # 'interval': 1,
-            # 'when': 'midnight',
-            # 'encoding': 'utf8'
         },
         'critical_err': {
             'class': 'logging.handlers.SMTPHandler',
@@ -51,7 +37,7 @@ LOGGING_CONFIG = dict(
             'toaddrs': [
                 'a@a.com'
             ],
-            'subject': 'OneAPI : Something bad happened'
+            'subject': 'Something bad happened'
         }
     },
     loggers={
