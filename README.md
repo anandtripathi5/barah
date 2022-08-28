@@ -1,2 +1,20 @@
 # 12-factor-app
-A empty web app that satisfies the 12 factors. Python Flask API boilerplate directory structure. Simply git clone the repository and use the flask server as per you need
+
+A flask application boilerplate satisfies the 12 factors. Simply git clone the
+repository and use the flask server as per you need
+
+# Features
+
+- Flask directory structure
+- Automatic Swagger docs using Flask-Apispec
+- Marshmallow and webargs request and response validation
+- JWT authentication support
+- JWT support in Swagger documentation
+- Alembic support for migrations
+- Used Flask-restful library for basic structure
+- Extensions structure support
+- Pydantic support for configuration files.
+- Environment variable for configurations
+- Test cases using pytest
+- SQLAlchemy for database calls
+

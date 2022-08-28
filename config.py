@@ -1,55 +1,41 @@
-import os
+from datetime import timedelta
 
-import sys
+from apispec import APISpec
+from apispec.ext.marshmallow import MarshmallowPlugin
+from apispec_webframeworks.flask import FlaskPlugin
+from pydantic import BaseSettings
+from pydantic.config import Optional
 
-FLASK_APP_NAME = os.environ.get("FLASK_APP_NAME")
-DEBUG = os.environ.get("FLASK_DEBUG")
-DATABASE_URL = os.environ.get("DATABASE_URL")
-# SECRET_KEY = "my_secret_key"
 
-DEFAULT_LOGGER_NAME = os.environ.get("DEFAULT_LOGGER_NAME")
-LOGGING_CONFIG = dict(
-    version=1,
-    filters={
-        'request_id': {
-            '()': 'utils.log_utils.RequestIdFilter',
-        },
-    },
-    formatters={
-        'compact': {
-            'format': '%(request_id)s - %(asctime)s - %(filename)s - %(module)s - %(funcName)s - %(lineno)d - [%(levelname)s] - %(message)s'
-        },
-        'err_report': {'format': '%(asctime)s\n%(message)s'}
-    },
-    handlers={
-        DEFAULT_LOGGER_NAME: {
-            'class': 'logging.StreamHandler',
-            'stream': sys.stdout,
-            'formatter': 'compact',
-            'filters': ['request_id'],
-            'level': 'DEBUG',
-        },
-        'critical_err': {
-            'class': 'logging.handlers.SMTPHandler',
-            'formatter': 'err_report',
-            'mailhost': ("localhost", 25),
-            'fromaddr': 'a@a.com',
-            'toaddrs': [
-                'a@a.com'
-            ],
-            'subject': 'Something bad happened'
+class Settings(BaseSettings):
+    DEBUG: Optional[str]
+    DATABASE_URL: Optional[str]
+    SECRET_KEY: str = "my_secret_key"
+    LOG_LEVEL: str = "DEBUG"
+
+    RESTX_VALIDATE: bool = True
+
+    security_definitions = {
+        'bearer': {
+            'type': 'oauth2',
+            'flow': 'password',
+            'tokenUrl': '/login',
+            'in': 'application/json'
         }
-    },
-    loggers={
-        DEFAULT_LOGGER_NAME: {
-            'handlers': [DEFAULT_LOGGER_NAME],
-            'level': 'DEBUG',
-            'propagate': False
-        },
-        'crash': {
-            'handlers': ['critical_err', DEFAULT_LOGGER_NAME],
-            'level': 'ERROR',
-            'propagate': False
-        },
     }
-)
+    APISPEC_SPEC = APISpec(
+        title='12 Factor App',
+        version='v1',
+        plugins=[MarshmallowPlugin()],
+        openapi_version='2.0.0',
+        securityDefinitions=security_definitions
+    )
+    APISPEC_SWAGGER_UI_URL = '/'
+
+    JWT_SECRET_KEY: str = "secret_key"
+
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)
+    JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)
+
+
+settings = Settings(_env_file='.env', _env_file_encoding='utf-8')
