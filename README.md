@@ -19,6 +19,7 @@ repository and use the flask server as per you need
 
 # TODO
 - Dockerize application
+- Celery workers
 
 # The [twelve-factor app](http://12factor.net) Checklist Explained
 
