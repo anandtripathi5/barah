@@ -17,6 +17,9 @@ repository and use the flask server as per you need
 - Test cases using pytest
 - SQLAlchemy for database calls
 
+# TODO
+- Dockerize application
+
 # The [twelve-factor app](http://12factor.net) Checklist Explained
 
 | ✓  | Factors                                                                           | Status                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Remarks                                                                                                   |
