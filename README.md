@@ -33,13 +33,13 @@ docker-compose up --build
 
 Step 1
 ------
-![](../../Desktop/Screenshot 2022-09-10 at 3.40.58 PM.png)
+![](static/use_this_template.png)
 
 #### Click on "Use this template" green button on the top-right corner
 
 Step 2
 ------
-![](../../Desktop/Screenshot 2022-09-10 at 3.41.12 PM.png)
+![](static/create_new_repo.png)
 
 #### Create new flask repository with this 12 factor app template
 
