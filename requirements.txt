@@ -24,7 +24,7 @@ marshmallow==3.17.1
 packaging==21.3
 passlib==1.7.4
 pluggy==1.0.0
-psycopg2==2.9.3
+psycopg2-binary==2.9.3
 py==1.11.0
 pydantic==1.9.2
 PyJWT==2.4.0
