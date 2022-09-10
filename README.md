@@ -1,6 +1,7 @@
 # Barah
-A flask application boilerplate satisfies the 12 factors(twelve factor app). Simply git clone the
-repository and use the flask server as per you need
+
+A flask application boilerplate satisfies the 12 factors(twelve factor app).
+Simply git clone the repository and use the flask server as per you need
 
 # Features
 
@@ -16,10 +17,31 @@ repository and use the flask server as per you need
 - Environment variable for configurations
 - Test cases using pytest
 - SQLAlchemy for database calls
+- Docker support
 
 # TODO
-- Dockerize application
+
 - Celery workers
+
+# Command
+
+```shell
+docker-compose up --build
+```
+
+# Usage
+
+Step 1
+------
+![](../../Desktop/Screenshot 2022-09-10 at 3.40.58 PM.png)
+
+#### Click on "Use this template" green button on the top-right corner
+
+Step 2
+------
+![](../../Desktop/Screenshot 2022-09-10 at 3.41.12 PM.png)
+
+#### Create new flask repository with this 12 factor app template
 
 # The [twelve-factor app](http://12factor.net) Checklist Explained
 
