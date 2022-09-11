@@ -1,6 +1,6 @@
 # Barah
 
-A flask application boilerplate satisfies the 12 factors(twelve factor app).
+A flask boilerplate template with the 12 factors support(twelve factor app).
 Simply git clone the repository and use the flask server as per you need
 
 # Features
