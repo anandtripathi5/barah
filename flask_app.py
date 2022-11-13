@@ -2,7 +2,7 @@ from flask import Flask
 
 from apis.rest import api, init_routes
 from config import settings
-from extensions import session, Base, db, exc, docs, jwt
+from extensions import db, docs, exc, jwt, session
 from utils.log import configure_logging
 
 

@@ -1,9 +1,8 @@
 from enum import Enum
 
+from extensions import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy_utils import ChoiceType, PasswordType
-
-from extensions import Base
 
 
 class PermissionEnum(Enum):

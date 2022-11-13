@@ -2,7 +2,6 @@ from datetime import timedelta
 
 from apispec import APISpec
 from apispec.ext.marshmallow import MarshmallowPlugin
-from apispec_webframeworks.flask import FlaskPlugin
 from pydantic import BaseSettings
 from pydantic.config import Optional
 

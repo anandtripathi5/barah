@@ -1,6 +1,5 @@
-from sqlalchemy import Column, String, Integer, Text
-
 from extensions import Base
+from sqlalchemy import Column, Integer, String, Text
 
 
 class Book(Base):
