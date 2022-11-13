@@ -1,12 +1,12 @@
-from flask_apispec import use_kwargs, marshal_with, MethodResource, doc
+from extensions import db, security_params
+from flask_apispec import MethodResource, doc, marshal_with, use_kwargs
 from flask_restful import Resource
 from marshmallow import Schema
+from utils.helpers import auth_required
 from webargs import fields
 
 from apis.books.models import Book
 from apis.users.models import PermissionEnum
-from extensions import db, security_params
-from utils.helpers import auth_required
 
 
 class BookModel(Schema):

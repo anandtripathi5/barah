@@ -1,5 +1,5 @@
 from apis.books.views import Books
-from apis.users.views import Signup, Refresh, Login
+from apis.users.views import Login, Refresh, Signup
 
 
 class API:

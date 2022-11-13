@@ -1,9 +1,8 @@
+from extensions import db, docs, jwt
 from flask_restful import Api
 
-from apis.books.views import Books
 from apis.urls import urls
 from apis.users.models import User
-from extensions import docs, jwt, db
 
 api = Api()
 

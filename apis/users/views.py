@@ -1,12 +1,16 @@
+from extensions import db, security_params
 from flask_apispec import MethodResource, doc, use_kwargs
-from flask_jwt_extended import create_access_token, create_refresh_token, \
-    jwt_required, get_jwt_identity
+from flask_jwt_extended import (
+    create_access_token,
+    create_refresh_token,
+    get_jwt_identity,
+    jwt_required,
+)
 from flask_restful import Resource
 from marshmallow import Schema
 from webargs import fields
 
 from apis.users.models import User
-from extensions import db, docs, security_params
 
 
 class SignupRequest(Schema):
